@@ -1,0 +1,72 @@
+{
+    "target": "water_consumption",
+    "features": [
+        "phosphate_production",
+        "phosphate_grade",
+        "operating_hours",
+        "equipment_utilization",
+        "temperature",
+        "rainfall",
+        "fuel_consumption"
+    ],
+    "split_method": "chronological 80/20",
+    "training_records": 72,
+    "testing_records": 19,
+    "production_model": "Ridge Regression",
+    "results": [
+        {
+            "model": "Ridge Regression",
+            "target": "water_consumption",
+            "features": [
+                "phosphate_production",
+                "phosphate_grade",
+                "operating_hours",
+                "equipment_utilization",
+                "temperature",
+                "rainfall",
+                "fuel_consumption"
+            ],
+            "training_records": 72,
+            "testing_records": 19,
+            "mae": 46.344,
+            "rmse": 56.2161,
+            "r2_score": 0.3569
+        },
+        {
+            "model": "Random Forest Regression",
+            "target": "water_consumption",
+            "features": [
+                "phosphate_production",
+                "phosphate_grade",
+                "operating_hours",
+                "equipment_utilization",
+                "temperature",
+                "rainfall",
+                "fuel_consumption"
+            ],
+            "training_records": 72,
+            "testing_records": 19,
+            "mae": 49.8768,
+            "rmse": 67.9764,
+            "r2_score": 0.0597
+        },
+        {
+            "model": "Dummy Regression (Mean Baseline)",
+            "target": "water_consumption",
+            "features": [
+                "phosphate_production",
+                "phosphate_grade",
+                "operating_hours",
+                "equipment_utilization",
+                "temperature",
+                "rainfall",
+                "fuel_consumption"
+            ],
+            "training_records": 72,
+            "testing_records": 19,
+            "mae": 49.6639,
+            "rmse": 70.9287,
+            "r2_score": -0.0237
+        }
+    ]
+}

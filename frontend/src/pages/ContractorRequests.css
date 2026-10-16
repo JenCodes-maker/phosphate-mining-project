@@ -1,0 +1,266 @@
+.contractor-request-container {
+  min-height: 100vh;
+  padding: 30px;
+  background: #f5f7fb;
+  box-sizing: border-box;
+}
+
+/* Header */
+
+.contractor-request-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.contractor-request-header h1 {
+  margin: 0;
+  font-size: 30px;
+  color: #1f2937;
+}
+
+.contractor-request-header p {
+  margin-top: 8px;
+  color: #6b7280;
+}
+
+/* Buttons */
+
+.refresh-button {
+  border: none;
+  padding: 11px 18px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.refresh-button:hover {
+  background: #1d4ed8;
+}
+
+/* Messages */
+
+.success-message {
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 8px;
+  border: 1px solid #bbf7d0;
+}
+
+.error-message {
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+}
+
+/* Main Layout */
+
+.request-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+/* Cards */
+
+.request-card,
+.materials-card,
+.requests-history-card {
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.request-card h2,
+.materials-card h2,
+.requests-history-card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* Form */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+  border-color: #2563eb;
+}
+
+/* Submit */
+
+.submit-request-button {
+  width: 100%;
+  border: none;
+  padding: 13px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-request-button:hover {
+  background: #1d4ed8;
+}
+
+.submit-request-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Materials */
+
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.material-item {
+  padding: 18px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.material-item h3 {
+  margin: 0 0 8px;
+  color: #1f2937;
+}
+
+.material-item p {
+  margin: 0 0 12px;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.material-item strong {
+  color: #2563eb;
+}
+
+/* Table */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-wrapper th {
+  text-align: left;
+  padding: 14px;
+  background: #f8fafc;
+  color: #374151;
+  font-size: 14px;
+}
+
+.table-wrapper td {
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.table-wrapper tr:hover {
+  background: #f9fafb;
+}
+
+/* Status */
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-approved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Empty */
+
+.empty-state {
+  padding: 30px;
+  text-align: center;
+  color: #6b7280;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .request-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .materials-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .contractor-request-container {
+    padding: 18px;
+  }
+
+  .contractor-request-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .materials-grid {
+    grid-template-columns: 1fr;
+  }
+}

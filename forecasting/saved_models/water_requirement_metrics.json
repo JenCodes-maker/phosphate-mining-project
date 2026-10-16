@@ -1,0 +1,19 @@
+{
+    "model": "Ridge Regression",
+    "target": "water_consumption",
+    "features": [
+        "phosphate_production",
+        "phosphate_grade",
+        "operating_hours",
+        "equipment_utilization",
+        "temperature",
+        "rainfall",
+        "fuel_consumption"
+    ],
+    "training_records": 72,
+    "testing_records": 19,
+    "mae": 46.344,
+    "rmse": 56.2161,
+    "r2_score": 0.3569,
+    "alpha": 1.0
+}

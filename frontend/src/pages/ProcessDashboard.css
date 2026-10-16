@@ -1,0 +1,466 @@
+/* ==========================================
+   PROCESS DASHBOARD — MODERN UI REDESIGN
+   Compatible with existing ProcessDashboard.jsx class names
+========================================== */
+
+.process-dashboard {
+  min-height: 100vh;
+  padding: 36px clamp(16px, 3.5vw, 44px) 52px;
+  background:
+    radial-gradient(circle at 5% 0%, rgba(37, 99, 235, 0.08), transparent 26%),
+    radial-gradient(circle at 95% 12%, rgba(16, 185, 129, 0.07), transparent 24%),
+    #f5f7fb;
+  color: #172033;
+  box-sizing: border-box;
+}
+
+.process-dashboard * {
+  box-sizing: border-box;
+}
+
+.process-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin-bottom: 28px;
+  padding: 30px clamp(22px, 3vw, 36px);
+  overflow: hidden;
+  border: 1px solid #dce8f8;
+  border-radius: 22px;
+  background: linear-gradient(120deg, #102b52 0%, #1d4ed8 64%, #0284c7 100%);
+  box-shadow: 0 16px 36px rgba(29, 78, 216, 0.16);
+}
+
+.process-header h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  font-weight: 850;
+}
+
+.process-header p {
+  margin: 10px 0 0;
+  max-width: 680px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.97rem;
+  line-height: 1.7;
+}
+
+.process-section-title {
+  margin: 30px 0 16px;
+  color: #182943;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Refresh button */
+.refresh-button {
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 12px 19px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 750;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(10, 25, 60, 0.12);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.refresh-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.24);
+  transform: translateY(-1px);
+}
+
+.refresh-button:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.65);
+  outline-offset: 3px;
+}
+
+.refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* KPI cards */
+.process-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.process-kpi-card {
+  position: relative;
+  min-width: 0;
+  padding: 23px;
+  overflow: hidden;
+  border: 1px solid #e4eaf3;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 9px 25px rgba(24, 43, 77, 0.055);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.process-kpi-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, #2563eb, #38bdf8);
+}
+
+.process-kpi-card:hover {
+  transform: translateY(-3px);
+  border-color: #d2e0f4;
+  box-shadow: 0 14px 30px rgba(24, 43, 77, 0.09);
+}
+
+.process-kpi-card h3 {
+  margin: 0;
+  color: #66748b;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.process-kpi-card p {
+  margin: 15px 0 7px;
+  color: #17365f;
+  font-size: clamp(1.55rem, 2.3vw, 2rem);
+  line-height: 1.15;
+  font-weight: 850;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+
+.process-kpi-card span {
+  color: #8a96a9;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* Process status cards */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.status-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #e4eaf3;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 9px 25px rgba(24, 43, 77, 0.055);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.status-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 13px 28px rgba(24, 43, 77, 0.08);
+}
+
+.status-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 54px;
+  width: 54px;
+  height: 54px;
+  border-radius: 15px;
+  background: #eff6ff;
+  font-size: 1.75rem;
+}
+
+.status-card h3 {
+  margin: 0 0 8px;
+  color: #263850;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.status-normal {
+  color: #15803d;
+  font-size: 0.88rem;
+  font-weight: 750;
+}
+
+.status-warning {
+  color: #b45309;
+  font-size: 0.88rem;
+  font-weight: 750;
+}
+
+.status-danger {
+  color: #b91c1c;
+  font-size: 0.88rem;
+  font-weight: 750;
+}
+
+/* Production chart */
+.process-chart-card,
+.resource-chart-card,
+.process-data-card {
+  margin-top: 26px;
+  padding: clamp(21px, 3vw, 30px);
+  border: 1px solid #e4eaf3;
+  border-radius: 19px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(24, 43, 77, 0.055);
+}
+
+.process-chart-card h2,
+.resource-chart-card h2,
+.process-data-card h2 {
+  margin: 0;
+  color: #182943;
+  font-size: 1.22rem;
+  line-height: 1.4;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.chart-description {
+  margin: 8px 0 0;
+  color: #748197;
+  font-size: 0.91rem;
+  line-height: 1.65;
+}
+
+.process-chart-wrapper {
+  width: 100%;
+  margin-top: 16px;
+  overflow-x: auto;
+  scrollbar-color: #b8c7dc #f1f5f9;
+  scrollbar-width: thin;
+}
+
+.process-production-chart {
+  display: block;
+  width: 100%;
+  min-width: 680px;
+  height: 300px;
+  overflow: visible;
+}
+
+.process-production-chart line {
+  stroke: #cbd5e1;
+  stroke-width: 1.2;
+}
+
+.process-production-chart polyline {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.process-production-chart circle {
+  stroke: #fff;
+  stroke-width: 1.5;
+}
+
+.chart-summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px 18px;
+  margin-top: 17px;
+  padding-top: 16px;
+  border-top: 1px solid #edf1f7;
+  color: #68768b;
+  font-size: 0.83rem;
+}
+
+/* Resource usage bars */
+.resource-chart-card > p {
+  margin: 8px 0 0;
+  color: #748197;
+  font-size: 0.91rem;
+  line-height: 1.65;
+}
+
+.resource-bars {
+  margin-top: 27px;
+}
+
+.resource-row {
+  margin-bottom: 22px;
+}
+
+.resource-row:last-child {
+  margin-bottom: 0;
+}
+
+.resource-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 9px;
+  font-size: 0.88rem;
+}
+
+.resource-label span {
+  color: #3d4b61;
+  font-weight: 750;
+}
+
+.resource-label strong {
+  color: #516078;
+  font-size: 0.84rem;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.resource-background {
+  width: 100%;
+  height: 13px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e9eef5;
+}
+
+.resource-fill {
+  height: 100%;
+  min-width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  transition: width 0.5s ease;
+}
+
+.resource-note {
+  margin: 20px 0 0;
+  color: #8792a4;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+/* Dataset information */
+.process-data-card p {
+  margin: 14px 0 0;
+  color: #68768b;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.process-data-card strong {
+  color: #1e3a5f;
+  font-weight: 800;
+}
+
+/* Errors */
+.process-error {
+  margin: 0 0 16px;
+  padding: 13px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 11px;
+  background: #fff1f2;
+  color: #b91c1c;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Responsive layout */
+@media (max-width: 1050px) {
+  .process-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .status-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .process-dashboard {
+    padding: 22px 16px 34px;
+  }
+
+  .process-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px 21px;
+    border-radius: 18px;
+  }
+
+  .refresh-button {
+    width: 100%;
+  }
+
+  .process-section-title {
+    margin-top: 25px;
+    font-size: 1.15rem;
+  }
+
+  .process-kpi-grid,
+  .status-grid {
+    gap: 13px;
+  }
+
+  .process-kpi-card {
+    padding: 19px 17px 19px 20px;
+    border-radius: 14px;
+  }
+
+  .process-chart-card,
+  .resource-chart-card,
+  .process-data-card {
+    margin-top: 20px;
+    padding: 21px 17px;
+    border-radius: 16px;
+  }
+
+  .process-production-chart {
+    min-width: 620px;
+    height: 280px;
+  }
+
+  .chart-summary {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-dashboard {
+    padding: 16px 11px 28px;
+  }
+
+  .process-kpi-grid,
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-header h1 {
+    font-size: 1.55rem;
+  }
+
+  .process-header p {
+    font-size: 0.88rem;
+  }
+
+  .process-kpi-card p {
+    font-size: 1.8rem;
+  }
+
+  .status-card {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .refresh-button,
+  .process-kpi-card,
+  .status-card,
+  .resource-fill {
+    transition: none;
+  }
+}

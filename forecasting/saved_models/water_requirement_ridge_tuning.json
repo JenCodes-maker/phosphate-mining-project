@@ -1,0 +1,56 @@
+{
+    "alpha_values_tested": [
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        100.0
+    ],
+    "validation_records": 15,
+    "validation_results": [
+        {
+            "alpha": 0.01,
+            "mae": 28.1298,
+            "rmse": 31.3325,
+            "r2_score": -0.1196
+        },
+        {
+            "alpha": 0.1,
+            "mae": 28.1187,
+            "rmse": 31.3209,
+            "r2_score": -0.1188
+        },
+        {
+            "alpha": 1.0,
+            "mae": 28.01,
+            "rmse": 31.2102,
+            "r2_score": -0.1109
+        },
+        {
+            "alpha": 10.0,
+            "mae": 27.1277,
+            "rmse": 30.475,
+            "r2_score": -0.0592
+        },
+        {
+            "alpha": 100.0,
+            "mae": 25.0692,
+            "rmse": 30.5896,
+            "r2_score": -0.0672
+        }
+    ],
+    "best_alpha_by_validation_mae": 100.0,
+    "tuned_ridge_final_test": {
+        "mae": 43.0499,
+        "rmse": 57.4828,
+        "r2_score": 0.3276
+    },
+    "current_ridge_final_test": {
+        "mae": 46.344,
+        "rmse": 56.2161,
+        "r2_score": 0.3569
+    },
+    "production_model": "Ridge Regression (alpha=1.0)",
+    "tuned_model_activated": false,
+    "note": "The tuned model is evaluated only; the active Ridge model remains alpha=1.0."
+}

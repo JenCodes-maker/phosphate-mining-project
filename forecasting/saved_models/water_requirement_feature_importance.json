@@ -1,0 +1,45 @@
+{
+    "model": "Ridge Regression (alpha=1.0)",
+    "target": "water_consumption",
+    "method": "Permutation importance using negative MAE on chronological holdout",
+    "testing_records": 19,
+    "repeats": 30,
+    "interpretation": "Higher positive importance means shuffling the feature worsened MAE more. Values near zero suggest little measurable effect in this test set; negative values can occur from sampling noise or correlated features. Importance does not establish causation and is not used to select the model.",
+    "results": [
+        {
+            "feature": "phosphate_production",
+            "importance_mean": 14.110267,
+            "importance_std": 4.840279
+        },
+        {
+            "feature": "temperature",
+            "importance_mean": 2.236322,
+            "importance_std": 0.670713
+        },
+        {
+            "feature": "operating_hours",
+            "importance_mean": 0.076383,
+            "importance_std": 0.031564
+        },
+        {
+            "feature": "rainfall",
+            "importance_mean": -0.217628,
+            "importance_std": 0.499773
+        },
+        {
+            "feature": "fuel_consumption",
+            "importance_mean": -0.325337,
+            "importance_std": 3.192394
+        },
+        {
+            "feature": "phosphate_grade",
+            "importance_mean": -2.464159,
+            "importance_std": 1.05178
+        },
+        {
+            "feature": "equipment_utilization",
+            "importance_mean": -3.253133,
+            "importance_std": 1.62097
+        }
+    ]
+}

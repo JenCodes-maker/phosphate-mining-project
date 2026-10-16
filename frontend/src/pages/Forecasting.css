@@ -1,0 +1,493 @@
+/* ==========================================
+   PHOSPHATE MINING — FORECASTING UI
+   Keeps existing Forecasting.jsx class names
+========================================== */
+
+.forecasting-container {
+  min-height: 100vh;
+  padding: 36px clamp(16px, 4vw, 48px) 52px;
+  background:
+    radial-gradient(circle at 8% 4%, rgba(37, 99, 235, 0.09), transparent 28%),
+    radial-gradient(circle at 92% 18%, rgba(14, 165, 233, 0.08), transparent 24%),
+    #f5f7fb;
+  color: #172033;
+  box-sizing: border-box;
+}
+
+.forecasting-container * {
+  box-sizing: border-box;
+}
+
+.forecasting-card {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 42px);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #e7edf6;
+  border-radius: 24px;
+  box-shadow: 0 18px 50px rgba(24, 43, 77, 0.08);
+}
+
+.forecasting-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  background: linear-gradient(90deg, #1d4ed8, #0ea5e9, #34d399);
+}
+
+.forecasting-title {
+  margin: 0 0 12px;
+  color: #14213d;
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+.forecasting-description {
+  max-width: 620px;
+  margin: 0 auto 30px;
+  color: #66748b;
+  text-align: center;
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.forecasting-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.forecasting-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.forecasting-field label {
+  color: #34425a;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.forecasting-field input {
+  width: 100%;
+  min-height: 49px;
+  padding: 12px 14px;
+  border: 1px solid #d9e1ee;
+  border-radius: 11px;
+  outline: none;
+  background: #fbfcff;
+  color: #172033;
+  font: inherit;
+  font-size: 0.96rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.forecasting-field input::placeholder {
+  color: #9aa6b8;
+}
+
+.forecasting-field input:hover {
+  border-color: #aabbd5;
+}
+
+.forecasting-field input:focus {
+  border-color: #3b82f6;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.13);
+}
+
+.forecasting-button {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  margin-top: 3px;
+  padding: 14px 22px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb 55%, #0284c7);
+  color: #fff;
+  font-size: 0.98rem;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: 0 9px 20px rgba(37, 99, 235, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.forecasting-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: saturate(1.08);
+  box-shadow: 0 13px 25px rgba(37, 99, 235, 0.27);
+}
+
+.forecasting-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.forecasting-button:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.35);
+  outline-offset: 3px;
+}
+
+.forecasting-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.forecasting-error {
+  margin: 20px 0 0;
+  padding: 12px 15px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fff1f2;
+  color: #b91c1c;
+  text-align: center;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* Forecast result */
+.forecast-result-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 28px auto 0;
+  padding: 27px 30px;
+  border: 1px solid #dbeafe;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #eff6ff 0%, #fff 62%, #ecfeff 100%);
+  box-shadow: 0 12px 32px rgba(30, 64, 175, 0.07);
+}
+
+.forecast-result-content h2 {
+  margin: 0;
+  color: #183153;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.forecast-result-content p {
+  margin: 8px 0 0;
+  color: #718096;
+  font-size: 0.93rem;
+}
+
+.forecast-result-value {
+  color: #1d4ed8;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  font-weight: 850;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
+}
+
+/* Input summary */
+.forecast-input-summary,
+.chart-section,
+.model-info-card {
+  max-width: 1100px;
+  margin: 28px auto 0;
+  padding: clamp(22px, 3vw, 30px);
+  border: 1px solid #e6ebf3;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(24, 43, 77, 0.055);
+}
+
+.forecast-input-summary h2,
+.chart-section h2,
+.model-info-card h2 {
+  margin: 0 0 22px;
+  color: #182943;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.forecast-input-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.input-summary-card {
+  min-width: 0;
+  padding: 19px;
+  border: 1px solid #e7edf6;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #f8faff, #f1f6fd);
+}
+
+.input-summary-card span {
+  display: block;
+  margin-bottom: 9px;
+  color: #75839a;
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.input-summary-card strong {
+  display: block;
+  color: #1e3a5f;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+/* Historical chart */
+.chart-section {
+  overflow: hidden;
+}
+
+.chart-section h2 {
+  margin-bottom: 8px;
+}
+
+.chart-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding: 8px 0 0;
+  scrollbar-color: #b8c7dc #f1f5f9;
+  scrollbar-width: thin;
+}
+
+.production-chart {
+  display: block;
+  width: 100%;
+  min-width: 680px;
+  height: 350px;
+  overflow: visible;
+}
+
+.production-chart line {
+  stroke: #cbd5e1;
+}
+
+.production-chart polyline {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.production-chart circle {
+  stroke: #fff;
+  stroke-width: 1.5;
+  transition: r 0.15s ease;
+}
+
+.chart-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px 18px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #edf1f7;
+  color: #68768b;
+  font-size: 0.83rem;
+}
+
+.forecast-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 22px;
+  color: #5f6d82;
+  font-size: 0.86rem;
+}
+
+.forecast-chart-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.forecast-chart-legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legend-history {
+  background: #2563eb;
+}
+
+.legend-forecast {
+  background: #dc2626;
+}
+
+/* Model information */
+.model-info-card > p {
+  max-width: 850px;
+  margin: -8px 0 0;
+  color: #68768b;
+  font-size: 0.94rem;
+  line-height: 1.8;
+}
+
+.model-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.model-feature-grid > div {
+  padding: 20px;
+  border: 1px solid #e4ebf5;
+  border-radius: 14px;
+  background: #f8faff;
+}
+
+.model-feature-grid strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #24416a;
+  font-size: 0.98rem;
+}
+
+.model-feature-grid span {
+  color: #748197;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .forecasting-container {
+    padding: 26px 20px 40px;
+  }
+
+  .forecasting-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .forecast-input-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .model-feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .forecasting-container {
+    padding: 18px 12px 30px;
+  }
+
+  .forecasting-card {
+    padding: 27px 18px 22px;
+    border-radius: 18px;
+  }
+
+  .forecasting-form {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .forecasting-title {
+    font-size: 1.7rem;
+  }
+
+  .forecasting-description {
+    margin-bottom: 24px;
+    font-size: 0.9rem;
+  }
+
+  .forecasting-button {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .forecast-result-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 23px 20px;
+  }
+
+  .forecast-input-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast-input-summary,
+  .chart-section,
+  .model-info-card {
+    padding: 21px 17px;
+    border-radius: 16px;
+  }
+
+  .chart-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .forecast-chart-legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .production-chart {
+    min-width: 620px;
+    height: 300px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forecasting-field input,
+  .forecasting-button,
+  .production-chart circle {
+    transition: none;
+  }
+}
+
+
+/* Add these styles to the END of your existing Forecasting.css */
+.water-chart-note {
+  margin: 0 0 18px;
+  color: #68768b;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.water-chart-status {
+  padding: 16px;
+  color: #475569;
+  background: #f8faff;
+  border-radius: 12px;
+}
+
+.water-metric-grid {
+  margin: 18px 0 22px;
+}
+
+.water-history-table {
+  margin-top: 22px;
+}
+
+.water-history-table .analytics-table {
+  min-width: 650px;
+}
+
+@media (max-width: 600px) {
+  .water-metric-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
